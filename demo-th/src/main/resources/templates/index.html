@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<h1>test！</h1>
+<!--text：表示显示文本，value表示的是提交的数据-->
+<div th:text="${hotKey}" th:value="${hotKey}"></div>
+<h1>test-each</h1>
+
+<table>
+    <tr th:each="array,start:${arrayList}">
+        <td th:text="${array}"></td>
+        <td th:text="${start.index}"></td>
+    </tr>
+
+</table>
+<h1>test-if-三元!</h1>
+
+
+<div th:text="${age}>18?'成年人':'青少年'"></div>
+
+<div th:text="${age}>='18'?'成年人OK':'青少年NG'"></div>
+
+<div th:if="${age}>=18" th:text="向古天乐学习"></div>
+
+<div th:if="${age}>='18'" th:text="向某人看齐多挣钱"></div>
+
+<h1>test-session取值</h1>
+<span th:text="${session.job}"></span>
+
+<h1>test-内嵌页</h1>
+<div th:include="itemInner"></div>
+</body>
+</html>
